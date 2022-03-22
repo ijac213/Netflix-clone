@@ -8,15 +8,15 @@ function Row({title,fetchUrl,isLargeRow}) {
     const [movies, setMovies] = useState([]);
     
 
-    useEffect(() => {
+useEffect(() => {
 
- async function fetchData() {
-const request = await axios.get(fetchUrl);
-setMovies(request.data.results);
-return request;
- }
- fetchData();
-    }, [fetchUrl] );
+    async function fetchData() {
+        const request = await axios.get(fetchUrl);
+        setMovies(request.data.results);
+        return request;
+    }
+    fetchData();
+ }, [fetchUrl] );
 
     return (
 
